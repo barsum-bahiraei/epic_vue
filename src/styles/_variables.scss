@@ -1,0 +1,102 @@
+// Color system
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black: #000;
+
+$primary: darkred;
+$secondary: gold;
+// $success: $green;
+// $info: $cyan;
+// $warning: $yellow;
+// $danger: $red;
+$light: $gray-100;
+$dark: $gray-900;
+
+// Enabling or disabling optional features.
+$enable-negative-margins: true;
+
+// Settings for the `<body>` element.
+$body-bg: $white;
+$body-color: $gray-900;
+$body-text-align: null;
+
+// Define radius sizes
+$border-radius: 0.25rem;
+$border-radius-sm: 0.2rem;
+$border-radius-lg: 0.3rem;
+$border-radius-pill: 50rem;
+
+// Define shadows
+$box-shadow: 0 0.5rem 1rem rgba($black, 0.15);
+$box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075);
+$box-shadow-lg: 0 1rem 3rem rgba($black, 0.175);
+$box-shadow-inset: inset 0 1px 2px rgba($black, 0.075);
+
+$input-box-shadow: none !important;
+$input-focus-box-shadow: none !important;
+
+$btn-box-shadow:none !important;
+$btn-focus-box-shadow:none !important;
+
+// Typography
+// $font-family-base: var(--#{$variable-prefix}font-sans-serif);
+// $font-family-code: var(--#{$variable-prefix}font-monospace);
+
+// $font-size-root effects the value of `rem`, which is used for as well font sizes, paddings and margins
+// $font-size-base effects the font size of the body text
+$font-size-root: null;
+$font-size-base: 0.875rem; // Assumes the browser default, typically `16px`
+$font-size-sm: $font-size-base * 0.875;
+$font-size-lg: $font-size-base * 1.25;
+
+$font-weight-lighter: lighter;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$font-weight-bolder: bolder;
+
+$font-weight-base: $font-weight-normal;
+
+$line-height-base: 1.5;
+$line-height-sm: 1.25;
+$line-height-lg: 2;
+
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base;
+
+$font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
+  5: $h5-font-size,
+  6: $h6-font-size,
+);
+
+// $headings-margin-bottom: $spacer / 2;
+$headings-font-family: null;
+$headings-font-style: null;
+$headings-font-weight: 500;
+$headings-line-height: 1.2;
+$headings-color: null;
+
+$utilities: (
+  "cursor": (
+    property: cursor,
+    values: auto default pointer wait text move help not-allowed
+  )
+ );
+
+

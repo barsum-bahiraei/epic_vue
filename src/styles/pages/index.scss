@@ -1,0 +1,9 @@
+* {
+  scrollbar-color: rgba(0, 0, 0, 0.2) hsla(0, 0%, 100%, 0.459);
+  scrollbar-width: thin;
+}
+@for $i from 1 to 100 {
+  .font-#{$i} {
+    font-size: #{$i}px !important;
+  }
+}
