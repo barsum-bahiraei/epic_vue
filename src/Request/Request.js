@@ -32,6 +32,20 @@ class Request {
     return this;
   }
 
+  put(endpoint) {
+    this.reset();
+    this.method = "PUT";
+    this.endpoint = endpoint;
+    return this;
+  }
+
+  delete(endpoint) {
+    this.reset();
+    this.method = "DELETE";
+    this.endpoint = endpoint;
+    return this;
+  }
+
   addParam(key, value) {
     this.params[key] = value;
     return this;
@@ -53,7 +67,7 @@ class Request {
   }
 
   addFile(key, file) {
-    if (this.method === "POST") {
+    if (this.method === "POST" || this.method === "PUT") {
       this.data.append(key, file, file.name);
       this.setHeader("Content-Type", "multipart/form-data");
     }
@@ -103,6 +117,26 @@ class Request {
             reject(error.response.data);
           });
       });
+    } else if (this.method === "PUT") {
+      return new Promise((resolve, reject) => {
+        this._put(this.endpoint, this.params, this.data)
+            .then(function(response) {
+              resolve(response.data);
+            })
+            .catch(function(error) {
+              reject(error.response.data);
+            });
+      });
+    } else if (this.method === "DELETE") {
+      return new Promise((resolve, reject) => {
+        this._delete(this.endpoint, this.params)
+            .then(function(response) {
+              resolve(response.data);
+            })
+            .catch(function(error) {
+              reject(error.response.data);
+            });
+      });
     }
   }
 
@@ -116,6 +150,18 @@ class Request {
   _post(endpoint, params, data) {
     let query_string = this.parseQueryString(params);
     return this.axios_instance.post(endpoint + query_string, data, {
+      headers: this.headers
+    });
+  }
+  _put(endpoint, params, data) {
+    let query_string = this.parseQueryString(params);
+    return this.axios_instance.put(endpoint + query_string, data, {
+      headers: this.headers
+    });
+  }
+  _delete(endpoint, params) {
+    let query_string = this.parseQueryString(params);
+    return this.axios_instance.delete(endpoint + query_string,  {
       headers: this.headers
     });
   }
